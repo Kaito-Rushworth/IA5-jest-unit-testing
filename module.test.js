@@ -12,6 +12,25 @@ test('Testing div -- success', () => {
   expect(got).toBe(expected);
 });
 
+test('Testing div -- decimal', () => {
+  const expected = 6.9;
+  const got = mut.div(69, 10);
+  expect(got).toBe(expected);
+});
+
+test('Testing div -- divide by zero', () => {
+  const expected = Infinity;
+  const got = mut.div(67, 0);
+  expect(got).toBe(expected);
+});
+
+test('Testing div -- negative number', () => {
+  const expected = -10;
+  const got = mut.div(-420, 42);
+  expect(got).toBe(expected);
+});
+
+
 test('Testing containsNumbers -- true', () => {
   const expected = true;
   const got = mut.containsNumbers('abc67');
@@ -21,6 +40,12 @@ test('Testing containsNumbers -- true', () => {
 test('Testing containsNumbers -- false', () => {
   const expected = false;
   const got = mut.containsNumbers('hello');
+  expect(got).toBe(expected);
+});
+
+test('Testing containsNumbers -- empty string', () => {
+  const expected = false;
+  const got = mut.containsNumbers('');
   expect(got).toBe(expected);
 });
 
