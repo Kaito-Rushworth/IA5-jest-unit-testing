@@ -30,7 +30,6 @@ test('Testing div -- negative number', () => {
   expect(got).toBe(expected);
 });
 
-
 test('Testing containsNumbers -- true', () => {
   const expected = true;
   const got = mut.containsNumbers('abc67');
